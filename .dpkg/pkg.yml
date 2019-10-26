@@ -1,0 +1,5 @@
+resolve_path :
+pkglist: 
+  "@types/redis":
+    src: 
+    version: latest
