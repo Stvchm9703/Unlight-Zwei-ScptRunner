@@ -5,13 +5,15 @@ import { test, runIfMain } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 
 test(function t1() {
-    assertEquals("hello", "hello");
+  assertEquals("hello", "hello");
 });
 
 test(function t2() {
-    assertEquals("world", "world");
+  assertEquals("world", "world");
 });
 
 runIfMain(import.meta);
 
-console.log("help");
+
+import {a} from "@Gm/skill/hello1.ts";
+a();

@@ -4,14 +4,13 @@
   "description": "Unlight Zwei - Script Interpreter Runner",
   "main": "index.js",
   "scripts": {
-    "test": "deno run .dpkg/runcmd/test.ts",
-    "test_redis": "deno run .dpkg/runcmd/test_redis.ts",
-    "run":"deno run .dpkg/runcmd/index.js"
+    "test": "deno run .dpkg/runcmd/test.ts --importmap=package.json",
+    "test_redis": "deno run .dpkg/runcmd/test_redis.ts --importmap=package.json",
+    "run":"deno run .dpkg/runcmd/index.js --importmap=package.json -A",
+    "build_int":"deno install -d=./bin/ ulz_runner .dpkg/runcmd/index.ts -A"
   },
   "repository": "git+https://github.com/Stvchm9703/Unlight-Zwei-ScptRunner.git",
-  "keywords": [
-    "deno"
-  ],
+  "keywords": [ "deno" ],
   "author": "Steven Cheng <steven.cheng@teksbotics.com>",
   "license": "ISC",
   "bugs": {
@@ -21,5 +20,11 @@
   "private": true,
   "dependencies": {
     "@types/redis": "^2.8.14"
+  },
+  "imports": {
+      "moment": "/node_modules/moment/src/moment.js",
+      "lodash": "/node_modules/lodash-es/lodash.js",
+      "@Gm/" : ["./script/"],
+      "@std/" : ["https://deno.land/std/"]
   }
 }
