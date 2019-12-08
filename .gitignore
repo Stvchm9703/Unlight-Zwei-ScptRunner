@@ -12,3 +12,9 @@
 *.out
 node_modules
 bin/
+
+#Added by cargo
+
+/target
+**/*.rs.bk
+go.sum

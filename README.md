@@ -24,3 +24,13 @@ https://github.com/sebastienros/jint
 
 C# run wasm 
 https://github.com/migueldeicaza/WasmerSharp
+
+
+rust wasm 
+https://crates.io/crates/wasm-bindgen
+https://github.com/wasmerio/wasmer/tree/master/lib/runtime
+
+---
+TODO :
+1. grpc module
+2. bson file 
