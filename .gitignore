@@ -18,3 +18,5 @@ bin/
 /target
 **/*.rs.bk
 go.sum
+
+vendor/

@@ -30,7 +30,13 @@ rust wasm
 https://crates.io/crates/wasm-bindgen
 https://github.com/wasmerio/wasmer/tree/master/lib/runtime
 
+
+rust-grpc
+https://github.com/tikv/grpc-rs
+
+
 ---
 TODO :
 1. grpc module
+   1. `protoc  -I ./proto/  --go_out=plugins=grpc:proto ./proto/scriptRunner.proto`
 2. bson file 

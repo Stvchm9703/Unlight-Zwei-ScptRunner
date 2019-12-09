@@ -51,10 +51,10 @@ enum        EventHookPhase {
   gameset_end                                   = 230;
 }
 enum        EventHookType {
-  Instant                                       = 1;
-  Before                                        = 2;
-  After                                         = 3;
-  Proxy                                         = 4;
+  Instant                                       = 0;
+  Before                                        = 1;
+  After                                         = 2;
+  Proxy                                         = 3;
 }
 
 
@@ -102,6 +102,12 @@ message     Player {
   string          id      = 1;
   repeated    CardCharInt     CCSet   = 2;     
   repeated    ActionCard      Deck    = 3;
+}
+
+message     Log {
+  int64       Timestamp   = 1;
+  int32       LogLevel    = 2;
+  string      Message     = 3;
 }
 
 message     Room {
