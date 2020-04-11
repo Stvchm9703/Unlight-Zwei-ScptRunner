@@ -1,0 +1,20 @@
+{
+  "name": "grpc-examples",
+  "version": "0.1.0",
+  "dependencies": {
+    "@grpc/grpc-js": "^0.7.9",
+    "@grpc/proto-loader": "^0.1.0",
+    "async": "^1.5.2",
+    "google-protobuf": "^3.0.0",
+    "grpc": "^1.12.0",
+    "grpc-tools": "^1.8.1",
+    "lodash": "^4.6.1",
+    "minimist": "^1.2.0"
+  },
+  "scripts": {
+    "dev": "node run main.js",
+    "start": "node ",
+    "generate": "grpc_tools_node_protoc  -I=./src/proto/ --js_out=import_style=commonjs,binary:./src/proto_js --grpc_out=./src/proto_js/ --plugin=protoc-gen-grpc=`where grpc_tools_node_protoc_plugin` ./src/proto/*.proto",
+    "test-cli": "node "
+  }
+}
