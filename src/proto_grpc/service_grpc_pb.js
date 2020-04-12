@@ -3,8 +3,6 @@
 'use strict';
 var grpc = require('grpc');
 var message_pb = require('./message_pb.js');
-var common_pb = require('./common_pb.js');
-var Data_pb = require('./Data_pb.js');
 
 function serialize_ULZProto_SEDiceCalReq(arg) {
   if (!(arg instanceof message_pb.SEDiceCalReq)) {

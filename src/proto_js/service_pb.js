@@ -13,7 +13,3 @@ var global = Function('return this')();
 
 var message_pb = require('./message_pb.js');
 goog.object.extend(proto, message_pb);
-var common_pb = require('./common_pb.js');
-goog.object.extend(proto, common_pb);
-var Data_pb = require('./Data_pb.js');
-goog.object.extend(proto, Data_pb);

@@ -11,8 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var EventHookPhase_pb = require('./EventHookPhase_pb.js');
-goog.object.extend(proto, EventHookPhase_pb);
 var Data_pb = require('./Data_pb.js');
 goog.object.extend(proto, Data_pb);
 goog.exportSymbol('proto.ULZProto.DiceResultSet', null, global);
