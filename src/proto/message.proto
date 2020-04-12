@@ -13,9 +13,8 @@ option  go_package              = "proto";
 // -------------------------------------------------------------
 message SESkillCalReq {
     repeated EventCard          income_card                 = 1;
-    int32                       feat_no                     = 2;
-    int32                       pow                         = 3;
-    string                      from_cli                    = 4;
+    repeated SkillSet           feat                        = 2;
+    string                      from_cli                    = 3;
 }
 
 message SESkillCalResp {
