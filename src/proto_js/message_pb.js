@@ -41,7 +41,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ULZProto.SESkillCalReq.repeatedFields_ = [1];
+proto.ULZProto.SESkillCalReq.repeatedFields_ = [1,2];
 
 
 
@@ -74,9 +74,9 @@ proto.ULZProto.SESkillCalReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     incomeCardList: jspb.Message.toObjectList(msg.getIncomeCardList(),
     Data_pb.EventCard.toObject, includeInstance),
-    featNo: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    pow: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    fromCli: jspb.Message.getFieldWithDefault(msg, 4, "")
+    featList: jspb.Message.toObjectList(msg.getFeatList(),
+    Data_pb.SkillSet.toObject, includeInstance),
+    fromCli: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -119,14 +119,11 @@ proto.ULZProto.SESkillCalReq.deserializeBinaryFromReader = function(msg, reader)
       msg.addIncomeCard(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setFeatNo(value);
+      var value = new Data_pb.SkillSet;
+      reader.readMessage(value,Data_pb.SkillSet.deserializeBinaryFromReader);
+      msg.addFeat(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPow(value);
-      break;
-    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setFromCli(value);
       break;
@@ -167,24 +164,18 @@ proto.ULZProto.SESkillCalReq.serializeBinaryToWriter = function(message, writer)
       Data_pb.EventCard.serializeBinaryToWriter
     );
   }
-  f = message.getFeatNo();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getFeatList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
-      f
-    );
-  }
-  f = message.getPow();
-  if (f !== 0) {
-    writer.writeInt32(
-      3,
-      f
+      f,
+      Data_pb.SkillSet.serializeBinaryToWriter
     );
   }
   f = message.getFromCli();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
@@ -223,47 +214,48 @@ proto.ULZProto.SESkillCalReq.prototype.clearIncomeCardList = function() {
 
 
 /**
- * optional int32 feat_no = 2;
- * @return {number}
+ * repeated SkillSet feat = 2;
+ * @return {!Array<!proto.ULZProto.SkillSet>}
  */
-proto.ULZProto.SESkillCalReq.prototype.getFeatNo = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.ULZProto.SESkillCalReq.prototype.getFeatList = function() {
+  return /** @type{!Array<!proto.ULZProto.SkillSet>} */ (
+    jspb.Message.getRepeatedWrapperField(this, Data_pb.SkillSet, 2));
 };
 
 
-/** @param {number} value */
-proto.ULZProto.SESkillCalReq.prototype.setFeatNo = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+/** @param {!Array<!proto.ULZProto.SkillSet>} value */
+proto.ULZProto.SESkillCalReq.prototype.setFeatList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * optional int32 pow = 3;
- * @return {number}
+ * @param {!proto.ULZProto.SkillSet=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ULZProto.SkillSet}
  */
-proto.ULZProto.SESkillCalReq.prototype.getPow = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+proto.ULZProto.SESkillCalReq.prototype.addFeat = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ULZProto.SkillSet, opt_index);
 };
 
 
-/** @param {number} value */
-proto.ULZProto.SESkillCalReq.prototype.setPow = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+proto.ULZProto.SESkillCalReq.prototype.clearFeatList = function() {
+  this.setFeatList([]);
 };
 
 
 /**
- * optional string from_cli = 4;
+ * optional string from_cli = 3;
  * @return {string}
  */
 proto.ULZProto.SESkillCalReq.prototype.getFromCli = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
 proto.ULZProto.SESkillCalReq.prototype.setFromCli = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
