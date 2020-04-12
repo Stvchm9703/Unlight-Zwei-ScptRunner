@@ -58,11 +58,6 @@ protoc ^
   ./src/proto/*.proto
 
 
-grpc_tools_node_protoc  ^
-  -I=./src/proto/ ^
-  --js_out=import_style=commonjs,binary:./src/proto_js ^
-  --grpc_out=./src/proto_js/ ^
-  --plugin=protoc-gen-grpc=`where grpc_tools_node_protoc_plugin` ^
-  ./src/proto/Data.proto 
+grpc_tools_node_protoc  -I=./src/proto/ --js_out=import_style=commonjs,binary:./src/proto_js --grpc_out=./src/proto_js/ --plugin=protoc-gen-grpc=`where grpc_tools_node_protoc_plugin` ./src/proto/*.proto
 
 
