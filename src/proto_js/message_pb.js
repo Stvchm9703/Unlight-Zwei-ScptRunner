@@ -74,7 +74,7 @@ proto.ULZProto.SESkillCalReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     incomeCardList: jspb.Message.toObjectList(msg.getIncomeCardList(),
     Data_pb.EventCard.toObject, includeInstance),
-    featList: jspb.Message.toObjectList(msg.getFeatList(),
+    featListList: jspb.Message.toObjectList(msg.getFeatListList(),
     Data_pb.SkillSet.toObject, includeInstance),
     fromCli: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -121,7 +121,7 @@ proto.ULZProto.SESkillCalReq.deserializeBinaryFromReader = function(msg, reader)
     case 2:
       var value = new Data_pb.SkillSet;
       reader.readMessage(value,Data_pb.SkillSet.deserializeBinaryFromReader);
-      msg.addFeat(value);
+      msg.addFeatList(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -164,7 +164,7 @@ proto.ULZProto.SESkillCalReq.serializeBinaryToWriter = function(message, writer)
       Data_pb.EventCard.serializeBinaryToWriter
     );
   }
-  f = message.getFeatList();
+  f = message.getFeatListList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
@@ -214,17 +214,17 @@ proto.ULZProto.SESkillCalReq.prototype.clearIncomeCardList = function() {
 
 
 /**
- * repeated SkillSet feat = 2;
+ * repeated SkillSet feat_list = 2;
  * @return {!Array<!proto.ULZProto.SkillSet>}
  */
-proto.ULZProto.SESkillCalReq.prototype.getFeatList = function() {
+proto.ULZProto.SESkillCalReq.prototype.getFeatListList = function() {
   return /** @type{!Array<!proto.ULZProto.SkillSet>} */ (
     jspb.Message.getRepeatedWrapperField(this, Data_pb.SkillSet, 2));
 };
 
 
 /** @param {!Array<!proto.ULZProto.SkillSet>} value */
-proto.ULZProto.SESkillCalReq.prototype.setFeatList = function(value) {
+proto.ULZProto.SESkillCalReq.prototype.setFeatListList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
@@ -234,13 +234,13 @@ proto.ULZProto.SESkillCalReq.prototype.setFeatList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ULZProto.SkillSet}
  */
-proto.ULZProto.SESkillCalReq.prototype.addFeat = function(opt_value, opt_index) {
+proto.ULZProto.SESkillCalReq.prototype.addFeatList = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ULZProto.SkillSet, opt_index);
 };
 
 
-proto.ULZProto.SESkillCalReq.prototype.clearFeatList = function() {
-  this.setFeatList([]);
+proto.ULZProto.SESkillCalReq.prototype.clearFeatListList = function() {
+  this.setFeatListList([]);
 };
 
 
