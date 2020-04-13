@@ -1767,7 +1767,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ULZProto.SkillSet.repeatedFields_ = [5];
+proto.ULZProto.SkillSet.repeatedFields_ = [5,6];
 
 
 
@@ -1804,7 +1804,7 @@ proto.ULZProto.SkillSet.toObject = function(includeInstance, msg) {
     condString: jspb.Message.getFieldWithDefault(msg, 4, ""),
     condCardList: jspb.Message.toObjectList(msg.getCondCardList(),
     proto.ULZProto.SkillCardCond.toObject, includeInstance),
-    condRange: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    condRangeList: jspb.Message.getRepeatedField(msg, 6)
   };
 
   if (includeInstance) {
@@ -1863,8 +1863,8 @@ proto.ULZProto.SkillSet.deserializeBinaryFromReader = function(msg, reader) {
       msg.addCondCard(value);
       break;
     case 6:
-      var value = /** @type {!proto.ULZProto.RangeType} */ (reader.readEnum());
-      msg.setCondRange(value);
+      var value = /** @type {!Array<!proto.ULZProto.RangeType>} */ (reader.readPackedEnum());
+      msg.setCondRangeList(value);
       break;
     default:
       reader.skipField();
@@ -1931,9 +1931,9 @@ proto.ULZProto.SkillSet.serializeBinaryToWriter = function(message, writer) {
       proto.ULZProto.SkillCardCond.serializeBinaryToWriter
     );
   }
-  f = message.getCondRange();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getCondRangeList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
       6,
       f
     );
@@ -2033,17 +2033,31 @@ proto.ULZProto.SkillSet.prototype.clearCondCardList = function() {
 
 
 /**
- * optional RangeType cond_range = 6;
- * @return {!proto.ULZProto.RangeType}
+ * repeated RangeType cond_range = 6;
+ * @return {!Array<!proto.ULZProto.RangeType>}
  */
-proto.ULZProto.SkillSet.prototype.getCondRange = function() {
-  return /** @type {!proto.ULZProto.RangeType} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+proto.ULZProto.SkillSet.prototype.getCondRangeList = function() {
+  return /** @type {!Array<!proto.ULZProto.RangeType>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
-/** @param {!proto.ULZProto.RangeType} value */
-proto.ULZProto.SkillSet.prototype.setCondRange = function(value) {
-  jspb.Message.setProto3EnumField(this, 6, value);
+/** @param {!Array<!proto.ULZProto.RangeType>} value */
+proto.ULZProto.SkillSet.prototype.setCondRangeList = function(value) {
+  jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {!proto.ULZProto.RangeType} value
+ * @param {number=} opt_index
+ */
+proto.ULZProto.SkillSet.prototype.addCondRange = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+proto.ULZProto.SkillSet.prototype.clearCondRangeList = function() {
+  this.setCondRangeList([]);
 };
 
 
