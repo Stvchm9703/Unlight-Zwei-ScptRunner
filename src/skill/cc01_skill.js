@@ -2,10 +2,11 @@
 // #node cc01_skill.js 
 /** auto-gen from ulz/data/bin/adjust_skill.js 
 * generate by : Steven Chm
-* generate at : April 13th 2020, 4:57:19 pm
+* generate at : April 14th 2020, 2:30:42 am
 * !please manually modify the skill function
 */
-const util = require(./util);
+const util = require('./util');
+const msg = require('../proto_js/Data_pb');
 module.exports = {
 
 
