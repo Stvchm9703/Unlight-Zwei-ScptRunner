@@ -3446,7 +3446,8 @@ proto.ULZProto.EventCardFunc = {
 proto.ULZProto.SignEq = {
   EQUAL: 0,
   GREATER: 1,
-  LESSER: 2
+  LESSER: 2,
+  ANY: 3
 };
 
 /**
