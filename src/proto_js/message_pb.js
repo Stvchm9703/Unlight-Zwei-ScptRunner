@@ -29,7 +29,7 @@ goog.exportSymbol('proto.ULZProto.SESkillCalResp', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ULZProto.SESkillCalReq = function(opt_data) {
+proto.ULZProto.SESkillCalReq = function (opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.ULZProto.SESkillCalReq.repeatedFields_, null);
 };
 goog.inherits(proto.ULZProto.SESkillCalReq, jspb.Message);
@@ -41,49 +41,49 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ULZProto.SESkillCalReq.repeatedFields_ = [1,2];
+proto.ULZProto.SESkillCalReq.repeatedFields_ = [1, 2];
 
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ULZProto.SESkillCalReq.prototype.toObject = function(opt_includeInstance) {
-  return proto.ULZProto.SESkillCalReq.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ULZProto.SESkillCalReq} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ULZProto.SESkillCalReq.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    incomeCardList: jspb.Message.toObjectList(msg.getIncomeCardList(),
-    Data_pb.EventCard.toObject, includeInstance),
-    featList: jspb.Message.toObjectList(msg.getFeatList(),
-    Data_pb.SkillSet.toObject, includeInstance),
-    fromCli: jspb.Message.getFieldWithDefault(msg, 3, "")
+  /**
+   * Creates an object representation of this proto suitable for use in Soy templates.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+   * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+   *     for transitional soy proto support: http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.ULZProto.SESkillCalReq.prototype.toObject = function (opt_includeInstance) {
+    return proto.ULZProto.SESkillCalReq.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Whether to include the JSPB
+   *     instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.ULZProto.SESkillCalReq} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.ULZProto.SESkillCalReq.toObject = function (includeInstance, msg) {
+    var f, obj = {
+      incomeCardList: jspb.Message.toObjectList(msg.getIncomeCardList(),
+        Data_pb.EventCard.toObject, includeInstance),
+      featList: jspb.Message.toObjectList(msg.getFeatList(),
+        Data_pb.SkillSet.toObject, includeInstance),
+      fromCli: jspb.Message.getFieldWithDefault(msg, 3, "")
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -92,7 +92,7 @@ proto.ULZProto.SESkillCalReq.toObject = function(includeInstance, msg) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ULZProto.SESkillCalReq}
  */
-proto.ULZProto.SESkillCalReq.deserializeBinary = function(bytes) {
+proto.ULZProto.SESkillCalReq.deserializeBinary = function (bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.ULZProto.SESkillCalReq;
   return proto.ULZProto.SESkillCalReq.deserializeBinaryFromReader(msg, reader);
@@ -106,30 +106,30 @@ proto.ULZProto.SESkillCalReq.deserializeBinary = function(bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.ULZProto.SESkillCalReq}
  */
-proto.ULZProto.SESkillCalReq.deserializeBinaryFromReader = function(msg, reader) {
+proto.ULZProto.SESkillCalReq.deserializeBinaryFromReader = function (msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new Data_pb.EventCard;
-      reader.readMessage(value,Data_pb.EventCard.deserializeBinaryFromReader);
-      msg.addIncomeCard(value);
-      break;
-    case 2:
-      var value = new Data_pb.SkillSet;
-      reader.readMessage(value,Data_pb.SkillSet.deserializeBinaryFromReader);
-      msg.addFeat(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFromCli(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = new Data_pb.EventCard;
+        reader.readMessage(value, Data_pb.EventCard.deserializeBinaryFromReader);
+        msg.addIncomeCard(value);
+        break;
+      case 2:
+        var value = new Data_pb.SkillSet;
+        reader.readMessage(value, Data_pb.SkillSet.deserializeBinaryFromReader);
+        msg.addFeat(value);
+        break;
+      case 3:
+        var value = /** @type {string} */ (reader.readString());
+        msg.setFromCli(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -140,7 +140,7 @@ proto.ULZProto.SESkillCalReq.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ULZProto.SESkillCalReq.prototype.serializeBinary = function() {
+proto.ULZProto.SESkillCalReq.prototype.serializeBinary = function () {
   var writer = new jspb.BinaryWriter();
   proto.ULZProto.SESkillCalReq.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -154,30 +154,19 @@ proto.ULZProto.SESkillCalReq.prototype.serializeBinary = function() {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ULZProto.SESkillCalReq.serializeBinaryToWriter = function(message, writer) {
+proto.ULZProto.SESkillCalReq.serializeBinaryToWriter = function (message, writer) {
   var f = undefined;
   f = message.getIncomeCardList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      Data_pb.EventCard.serializeBinaryToWriter
-    );
+    writer.writeRepeatedMessage(1, f, Data_pb.EventCard.serializeBinaryToWriter);
   }
   f = message.getFeatList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      Data_pb.SkillSet.serializeBinaryToWriter
-    );
+    writer.writeRepeatedMessage(2, f, Data_pb.SkillSet.serializeBinaryToWriter);
   }
   f = message.getFromCli();
   if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
+    writer.writeString(3, f);
   }
 };
 
@@ -186,14 +175,14 @@ proto.ULZProto.SESkillCalReq.serializeBinaryToWriter = function(message, writer)
  * repeated EventCard income_card = 1;
  * @return {!Array<!proto.ULZProto.EventCard>}
  */
-proto.ULZProto.SESkillCalReq.prototype.getIncomeCardList = function() {
+proto.ULZProto.SESkillCalReq.prototype.getIncomeCardList = function () {
   return /** @type{!Array<!proto.ULZProto.EventCard>} */ (
     jspb.Message.getRepeatedWrapperField(this, Data_pb.EventCard, 1));
 };
 
 
 /** @param {!Array<!proto.ULZProto.EventCard>} value */
-proto.ULZProto.SESkillCalReq.prototype.setIncomeCardList = function(value) {
+proto.ULZProto.SESkillCalReq.prototype.setIncomeCardList = function (value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -203,12 +192,12 @@ proto.ULZProto.SESkillCalReq.prototype.setIncomeCardList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ULZProto.EventCard}
  */
-proto.ULZProto.SESkillCalReq.prototype.addIncomeCard = function(opt_value, opt_index) {
+proto.ULZProto.SESkillCalReq.prototype.addIncomeCard = function (opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ULZProto.EventCard, opt_index);
 };
 
 
-proto.ULZProto.SESkillCalReq.prototype.clearIncomeCardList = function() {
+proto.ULZProto.SESkillCalReq.prototype.clearIncomeCardList = function () {
   this.setIncomeCardList([]);
 };
 
@@ -217,14 +206,14 @@ proto.ULZProto.SESkillCalReq.prototype.clearIncomeCardList = function() {
  * repeated SkillSet feat = 2;
  * @return {!Array<!proto.ULZProto.SkillSet>}
  */
-proto.ULZProto.SESkillCalReq.prototype.getFeatList = function() {
+proto.ULZProto.SESkillCalReq.prototype.getFeatList = function () {
   return /** @type{!Array<!proto.ULZProto.SkillSet>} */ (
     jspb.Message.getRepeatedWrapperField(this, Data_pb.SkillSet, 2));
 };
 
 
 /** @param {!Array<!proto.ULZProto.SkillSet>} value */
-proto.ULZProto.SESkillCalReq.prototype.setFeatList = function(value) {
+proto.ULZProto.SESkillCalReq.prototype.setFeatList = function (value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
@@ -234,12 +223,12 @@ proto.ULZProto.SESkillCalReq.prototype.setFeatList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ULZProto.SkillSet}
  */
-proto.ULZProto.SESkillCalReq.prototype.addFeat = function(opt_value, opt_index) {
+proto.ULZProto.SESkillCalReq.prototype.addFeat = function (opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ULZProto.SkillSet, opt_index);
 };
 
 
-proto.ULZProto.SESkillCalReq.prototype.clearFeatList = function() {
+proto.ULZProto.SESkillCalReq.prototype.clearFeatList = function () {
   this.setFeatList([]);
 };
 
@@ -248,13 +237,13 @@ proto.ULZProto.SESkillCalReq.prototype.clearFeatList = function() {
  * optional string from_cli = 3;
  * @return {string}
  */
-proto.ULZProto.SESkillCalReq.prototype.getFromCli = function() {
+proto.ULZProto.SESkillCalReq.prototype.getFromCli = function () {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.ULZProto.SESkillCalReq.prototype.setFromCli = function(value) {
+proto.ULZProto.SESkillCalReq.prototype.setFromCli = function (value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -270,7 +259,7 @@ proto.ULZProto.SESkillCalReq.prototype.setFromCli = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ULZProto.SESkillCalResp = function(opt_data) {
+proto.ULZProto.SESkillCalResp = function (opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.ULZProto.SESkillCalResp.repeatedFields_, null);
 };
 goog.inherits(proto.ULZProto.SESkillCalResp, jspb.Message);
@@ -287,42 +276,42 @@ proto.ULZProto.SESkillCalResp.repeatedFields_ = [2];
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ULZProto.SESkillCalResp.prototype.toObject = function(opt_includeInstance) {
-  return proto.ULZProto.SESkillCalResp.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ULZProto.SESkillCalResp} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ULZProto.SESkillCalResp.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultVal: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    effectResultList: jspb.Message.toObjectList(msg.getEffectResultList(),
-    Data_pb.EffectResult.toObject, includeInstance)
+  /**
+   * Creates an object representation of this proto suitable for use in Soy templates.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+   * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+   *     for transitional soy proto support: http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.ULZProto.SESkillCalResp.prototype.toObject = function (opt_includeInstance) {
+    return proto.ULZProto.SESkillCalResp.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Whether to include the JSPB
+   *     instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.ULZProto.SESkillCalResp} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.ULZProto.SESkillCalResp.toObject = function (includeInstance, msg) {
+    var f, obj = {
+      resultVal: jspb.Message.getFieldWithDefault(msg, 1, 0),
+      effectResultList: jspb.Message.toObjectList(msg.getEffectResultList(),
+        Data_pb.EffectResult.toObject, includeInstance)
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -331,7 +320,7 @@ proto.ULZProto.SESkillCalResp.toObject = function(includeInstance, msg) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ULZProto.SESkillCalResp}
  */
-proto.ULZProto.SESkillCalResp.deserializeBinary = function(bytes) {
+proto.ULZProto.SESkillCalResp.deserializeBinary = function (bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.ULZProto.SESkillCalResp;
   return proto.ULZProto.SESkillCalResp.deserializeBinaryFromReader(msg, reader);
@@ -345,25 +334,25 @@ proto.ULZProto.SESkillCalResp.deserializeBinary = function(bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.ULZProto.SESkillCalResp}
  */
-proto.ULZProto.SESkillCalResp.deserializeBinaryFromReader = function(msg, reader) {
+proto.ULZProto.SESkillCalResp.deserializeBinaryFromReader = function (msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setResultVal(value);
-      break;
-    case 2:
-      var value = new Data_pb.EffectResult;
-      reader.readMessage(value,Data_pb.EffectResult.deserializeBinaryFromReader);
-      msg.addEffectResult(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {number} */ (reader.readInt32());
+        msg.setResultVal(value);
+        break;
+      case 2:
+        var value = new Data_pb.EffectResult;
+        reader.readMessage(value, Data_pb.EffectResult.deserializeBinaryFromReader);
+        msg.addEffectResult(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -374,7 +363,7 @@ proto.ULZProto.SESkillCalResp.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ULZProto.SESkillCalResp.prototype.serializeBinary = function() {
+proto.ULZProto.SESkillCalResp.prototype.serializeBinary = function () {
   var writer = new jspb.BinaryWriter();
   proto.ULZProto.SESkillCalResp.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -388,7 +377,7 @@ proto.ULZProto.SESkillCalResp.prototype.serializeBinary = function() {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ULZProto.SESkillCalResp.serializeBinaryToWriter = function(message, writer) {
+proto.ULZProto.SESkillCalResp.serializeBinaryToWriter = function (message, writer) {
   var f = undefined;
   f = message.getResultVal();
   if (f !== 0) {
@@ -412,13 +401,13 @@ proto.ULZProto.SESkillCalResp.serializeBinaryToWriter = function(message, writer
  * optional int32 result_val = 1;
  * @return {number}
  */
-proto.ULZProto.SESkillCalResp.prototype.getResultVal = function() {
+proto.ULZProto.SESkillCalResp.prototype.getResultVal = function () {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /** @param {number} value */
-proto.ULZProto.SESkillCalResp.prototype.setResultVal = function(value) {
+proto.ULZProto.SESkillCalResp.prototype.setResultVal = function (value) {
   jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -427,14 +416,14 @@ proto.ULZProto.SESkillCalResp.prototype.setResultVal = function(value) {
  * repeated EffectResult effect_result = 2;
  * @return {!Array<!proto.ULZProto.EffectResult>}
  */
-proto.ULZProto.SESkillCalResp.prototype.getEffectResultList = function() {
+proto.ULZProto.SESkillCalResp.prototype.getEffectResultList = function () {
   return /** @type{!Array<!proto.ULZProto.EffectResult>} */ (
     jspb.Message.getRepeatedWrapperField(this, Data_pb.EffectResult, 2));
 };
 
 
 /** @param {!Array<!proto.ULZProto.EffectResult>} value */
-proto.ULZProto.SESkillCalResp.prototype.setEffectResultList = function(value) {
+proto.ULZProto.SESkillCalResp.prototype.setEffectResultList = function (value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
@@ -444,12 +433,12 @@ proto.ULZProto.SESkillCalResp.prototype.setEffectResultList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ULZProto.EffectResult}
  */
-proto.ULZProto.SESkillCalResp.prototype.addEffectResult = function(opt_value, opt_index) {
+proto.ULZProto.SESkillCalResp.prototype.addEffectResult = function (opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ULZProto.EffectResult, opt_index);
 };
 
 
-proto.ULZProto.SESkillCalResp.prototype.clearEffectResultList = function() {
+proto.ULZProto.SESkillCalResp.prototype.clearEffectResultList = function () {
   this.setEffectResultList([]);
 };
 
@@ -465,7 +454,7 @@ proto.ULZProto.SESkillCalResp.prototype.clearEffectResultList = function() {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ULZProto.SEDiceCalReq = function(opt_data) {
+proto.ULZProto.SEDiceCalReq = function (opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.ULZProto.SEDiceCalReq, jspb.Message);
@@ -475,41 +464,41 @@ if (goog.DEBUG && !COMPILED) {
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ULZProto.SEDiceCalReq.prototype.toObject = function(opt_includeInstance) {
-  return proto.ULZProto.SEDiceCalReq.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ULZProto.SEDiceCalReq} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ULZProto.SEDiceCalReq.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    incomeDice: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    act: jspb.Message.getFieldWithDefault(msg, 2, 0)
+  /**
+   * Creates an object representation of this proto suitable for use in Soy templates.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+   * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+   *     for transitional soy proto support: http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.ULZProto.SEDiceCalReq.prototype.toObject = function (opt_includeInstance) {
+    return proto.ULZProto.SEDiceCalReq.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Whether to include the JSPB
+   *     instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.ULZProto.SEDiceCalReq} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.ULZProto.SEDiceCalReq.toObject = function (includeInstance, msg) {
+    var f, obj = {
+      incomeDice: jspb.Message.getFieldWithDefault(msg, 1, 0),
+      act: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -518,7 +507,7 @@ proto.ULZProto.SEDiceCalReq.toObject = function(includeInstance, msg) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ULZProto.SEDiceCalReq}
  */
-proto.ULZProto.SEDiceCalReq.deserializeBinary = function(bytes) {
+proto.ULZProto.SEDiceCalReq.deserializeBinary = function (bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.ULZProto.SEDiceCalReq;
   return proto.ULZProto.SEDiceCalReq.deserializeBinaryFromReader(msg, reader);
@@ -532,24 +521,24 @@ proto.ULZProto.SEDiceCalReq.deserializeBinary = function(bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.ULZProto.SEDiceCalReq}
  */
-proto.ULZProto.SEDiceCalReq.deserializeBinaryFromReader = function(msg, reader) {
+proto.ULZProto.SEDiceCalReq.deserializeBinaryFromReader = function (msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setIncomeDice(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setAct(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {number} */ (reader.readInt32());
+        msg.setIncomeDice(value);
+        break;
+      case 2:
+        var value = /** @type {number} */ (reader.readInt32());
+        msg.setAct(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -560,7 +549,7 @@ proto.ULZProto.SEDiceCalReq.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ULZProto.SEDiceCalReq.prototype.serializeBinary = function() {
+proto.ULZProto.SEDiceCalReq.prototype.serializeBinary = function () {
   var writer = new jspb.BinaryWriter();
   proto.ULZProto.SEDiceCalReq.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -574,7 +563,7 @@ proto.ULZProto.SEDiceCalReq.prototype.serializeBinary = function() {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ULZProto.SEDiceCalReq.serializeBinaryToWriter = function(message, writer) {
+proto.ULZProto.SEDiceCalReq.serializeBinaryToWriter = function (message, writer) {
   var f = undefined;
   f = message.getIncomeDice();
   if (f !== 0) {
@@ -597,13 +586,13 @@ proto.ULZProto.SEDiceCalReq.serializeBinaryToWriter = function(message, writer) 
  * optional int32 income_dice = 1;
  * @return {number}
  */
-proto.ULZProto.SEDiceCalReq.prototype.getIncomeDice = function() {
+proto.ULZProto.SEDiceCalReq.prototype.getIncomeDice = function () {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /** @param {number} value */
-proto.ULZProto.SEDiceCalReq.prototype.setIncomeDice = function(value) {
+proto.ULZProto.SEDiceCalReq.prototype.setIncomeDice = function (value) {
   jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -612,13 +601,13 @@ proto.ULZProto.SEDiceCalReq.prototype.setIncomeDice = function(value) {
  * optional int32 act = 2;
  * @return {number}
  */
-proto.ULZProto.SEDiceCalReq.prototype.getAct = function() {
+proto.ULZProto.SEDiceCalReq.prototype.getAct = function () {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /** @param {number} value */
-proto.ULZProto.SEDiceCalReq.prototype.setAct = function(value) {
+proto.ULZProto.SEDiceCalReq.prototype.setAct = function (value) {
   jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -634,7 +623,7 @@ proto.ULZProto.SEDiceCalReq.prototype.setAct = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ULZProto.SEDiceCalResp = function(opt_data) {
+proto.ULZProto.SEDiceCalResp = function (opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.ULZProto.SEDiceCalResp.repeatedFields_, null);
 };
 goog.inherits(proto.ULZProto.SEDiceCalResp, jspb.Message);
@@ -651,41 +640,41 @@ proto.ULZProto.SEDiceCalResp.repeatedFields_ = [1];
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ULZProto.SEDiceCalResp.prototype.toObject = function(opt_includeInstance) {
-  return proto.ULZProto.SEDiceCalResp.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ULZProto.SEDiceCalResp} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ULZProto.SEDiceCalResp.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    diceResultList: jspb.Message.toObjectList(msg.getDiceResultList(),
-    proto.ULZProto.DiceResultSet.toObject, includeInstance)
+  /**
+   * Creates an object representation of this proto suitable for use in Soy templates.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+   * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+   *     for transitional soy proto support: http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.ULZProto.SEDiceCalResp.prototype.toObject = function (opt_includeInstance) {
+    return proto.ULZProto.SEDiceCalResp.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Whether to include the JSPB
+   *     instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.ULZProto.SEDiceCalResp} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.ULZProto.SEDiceCalResp.toObject = function (includeInstance, msg) {
+    var f, obj = {
+      diceResultList: jspb.Message.toObjectList(msg.getDiceResultList(),
+        proto.ULZProto.DiceResultSet.toObject, includeInstance)
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -694,7 +683,7 @@ proto.ULZProto.SEDiceCalResp.toObject = function(includeInstance, msg) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ULZProto.SEDiceCalResp}
  */
-proto.ULZProto.SEDiceCalResp.deserializeBinary = function(bytes) {
+proto.ULZProto.SEDiceCalResp.deserializeBinary = function (bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.ULZProto.SEDiceCalResp;
   return proto.ULZProto.SEDiceCalResp.deserializeBinaryFromReader(msg, reader);
@@ -708,21 +697,21 @@ proto.ULZProto.SEDiceCalResp.deserializeBinary = function(bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.ULZProto.SEDiceCalResp}
  */
-proto.ULZProto.SEDiceCalResp.deserializeBinaryFromReader = function(msg, reader) {
+proto.ULZProto.SEDiceCalResp.deserializeBinaryFromReader = function (msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new proto.ULZProto.DiceResultSet;
-      reader.readMessage(value,proto.ULZProto.DiceResultSet.deserializeBinaryFromReader);
-      msg.addDiceResult(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = new proto.ULZProto.DiceResultSet;
+        reader.readMessage(value, proto.ULZProto.DiceResultSet.deserializeBinaryFromReader);
+        msg.addDiceResult(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -733,7 +722,7 @@ proto.ULZProto.SEDiceCalResp.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ULZProto.SEDiceCalResp.prototype.serializeBinary = function() {
+proto.ULZProto.SEDiceCalResp.prototype.serializeBinary = function () {
   var writer = new jspb.BinaryWriter();
   proto.ULZProto.SEDiceCalResp.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -747,7 +736,7 @@ proto.ULZProto.SEDiceCalResp.prototype.serializeBinary = function() {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ULZProto.SEDiceCalResp.serializeBinaryToWriter = function(message, writer) {
+proto.ULZProto.SEDiceCalResp.serializeBinaryToWriter = function (message, writer) {
   var f = undefined;
   f = message.getDiceResultList();
   if (f.length > 0) {
@@ -764,14 +753,14 @@ proto.ULZProto.SEDiceCalResp.serializeBinaryToWriter = function(message, writer)
  * repeated DiceResultSet dice_result = 1;
  * @return {!Array<!proto.ULZProto.DiceResultSet>}
  */
-proto.ULZProto.SEDiceCalResp.prototype.getDiceResultList = function() {
+proto.ULZProto.SEDiceCalResp.prototype.getDiceResultList = function () {
   return /** @type{!Array<!proto.ULZProto.DiceResultSet>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ULZProto.DiceResultSet, 1));
 };
 
 
 /** @param {!Array<!proto.ULZProto.DiceResultSet>} value */
-proto.ULZProto.SEDiceCalResp.prototype.setDiceResultList = function(value) {
+proto.ULZProto.SEDiceCalResp.prototype.setDiceResultList = function (value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -781,12 +770,12 @@ proto.ULZProto.SEDiceCalResp.prototype.setDiceResultList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ULZProto.DiceResultSet}
  */
-proto.ULZProto.SEDiceCalResp.prototype.addDiceResult = function(opt_value, opt_index) {
+proto.ULZProto.SEDiceCalResp.prototype.addDiceResult = function (opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ULZProto.DiceResultSet, opt_index);
 };
 
 
-proto.ULZProto.SEDiceCalResp.prototype.clearDiceResultList = function() {
+proto.ULZProto.SEDiceCalResp.prototype.clearDiceResultList = function () {
   this.setDiceResultList([]);
 };
 
@@ -802,7 +791,7 @@ proto.ULZProto.SEDiceCalResp.prototype.clearDiceResultList = function() {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ULZProto.DiceResultSet = function(opt_data) {
+proto.ULZProto.DiceResultSet = function (opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.ULZProto.DiceResultSet.repeatedFields_, null);
 };
 goog.inherits(proto.ULZProto.DiceResultSet, jspb.Message);
@@ -819,40 +808,40 @@ proto.ULZProto.DiceResultSet.repeatedFields_ = [1];
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ULZProto.DiceResultSet.prototype.toObject = function(opt_includeInstance) {
-  return proto.ULZProto.DiceResultSet.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ULZProto.DiceResultSet} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ULZProto.DiceResultSet.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    valueList: jspb.Message.getRepeatedField(msg, 1)
+  /**
+   * Creates an object representation of this proto suitable for use in Soy templates.
+   * Field names that are reserved in JavaScript and will be renamed to pb_name.
+   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+   * For the list of reserved names please see:
+   *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+   * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+   *     for transitional soy proto support: http://goto/soy-param-migration
+   * @return {!Object}
+   */
+  proto.ULZProto.DiceResultSet.prototype.toObject = function (opt_includeInstance) {
+    return proto.ULZProto.DiceResultSet.toObject(opt_includeInstance, this);
   };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+
+  /**
+   * Static version of the {@see toObject} method.
+   * @param {boolean|undefined} includeInstance Whether to include the JSPB
+   *     instance for transitional soy proto support:
+   *     http://goto/soy-param-migration
+   * @param {!proto.ULZProto.DiceResultSet} msg The msg instance to transform.
+   * @return {!Object}
+   * @suppress {unusedLocalVariables} f is only used for nested messages
+   */
+  proto.ULZProto.DiceResultSet.toObject = function (includeInstance, msg) {
+    var f, obj = {
+      valueList: jspb.Message.getRepeatedField(msg, 1)
+    };
+
+    if (includeInstance) {
+      obj.$jspbMessageInstance = msg;
+    }
+    return obj;
+  };
 }
 
 
@@ -861,7 +850,7 @@ proto.ULZProto.DiceResultSet.toObject = function(includeInstance, msg) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ULZProto.DiceResultSet}
  */
-proto.ULZProto.DiceResultSet.deserializeBinary = function(bytes) {
+proto.ULZProto.DiceResultSet.deserializeBinary = function (bytes) {
   var reader = new jspb.BinaryReader(bytes);
   var msg = new proto.ULZProto.DiceResultSet;
   return proto.ULZProto.DiceResultSet.deserializeBinaryFromReader(msg, reader);
@@ -875,20 +864,20 @@ proto.ULZProto.DiceResultSet.deserializeBinary = function(bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.ULZProto.DiceResultSet}
  */
-proto.ULZProto.DiceResultSet.deserializeBinaryFromReader = function(msg, reader) {
+proto.ULZProto.DiceResultSet.deserializeBinaryFromReader = function (msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
-      msg.setValueList(value);
-      break;
-    default:
-      reader.skipField();
-      break;
+      case 1:
+        var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
+        msg.setValueList(value);
+        break;
+      default:
+        reader.skipField();
+        break;
     }
   }
   return msg;
@@ -899,7 +888,7 @@ proto.ULZProto.DiceResultSet.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ULZProto.DiceResultSet.prototype.serializeBinary = function() {
+proto.ULZProto.DiceResultSet.prototype.serializeBinary = function () {
   var writer = new jspb.BinaryWriter();
   proto.ULZProto.DiceResultSet.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
@@ -913,7 +902,7 @@ proto.ULZProto.DiceResultSet.prototype.serializeBinary = function() {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ULZProto.DiceResultSet.serializeBinaryToWriter = function(message, writer) {
+proto.ULZProto.DiceResultSet.serializeBinaryToWriter = function (message, writer) {
   var f = undefined;
   f = message.getValueList();
   if (f.length > 0) {
@@ -929,13 +918,13 @@ proto.ULZProto.DiceResultSet.serializeBinaryToWriter = function(message, writer)
  * repeated int32 value = 1;
  * @return {!Array<number>}
  */
-proto.ULZProto.DiceResultSet.prototype.getValueList = function() {
+proto.ULZProto.DiceResultSet.prototype.getValueList = function () {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /** @param {!Array<number>} value */
-proto.ULZProto.DiceResultSet.prototype.setValueList = function(value) {
+proto.ULZProto.DiceResultSet.prototype.setValueList = function (value) {
   jspb.Message.setField(this, 1, value || []);
 };
 
@@ -944,12 +933,12 @@ proto.ULZProto.DiceResultSet.prototype.setValueList = function(value) {
  * @param {number} value
  * @param {number=} opt_index
  */
-proto.ULZProto.DiceResultSet.prototype.addValue = function(value, opt_index) {
+proto.ULZProto.DiceResultSet.prototype.addValue = function (value, opt_index) {
   jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
-proto.ULZProto.DiceResultSet.prototype.clearValueList = function() {
+proto.ULZProto.DiceResultSet.prototype.clearValueList = function () {
   this.setValueList([]);
 };
 

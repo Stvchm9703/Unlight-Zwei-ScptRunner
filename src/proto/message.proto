@@ -28,7 +28,7 @@ message SEDiceCalReq    {
 }
 
 message SEDiceCalResp   {
-    repeated DiceResultSet     dice_result                 = 1;
+    repeated DiceResultSet      dice_result                 = 1;
 }
 
 message DiceResultSet {

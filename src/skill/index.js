@@ -97,10 +97,6 @@ if(featFuncTable[41] == null){
     featFuncTable[41] = cc05Sk.backstab;
 }
 
-var RunFeatFunc = function($request_feat, $request_set, $gm_dt){
-    if(featFuncTable[$request_feat] != null){
-        return featFuncTable[$request_feat]();
-    }
-    return null;
-};
-exports.RunFeatFunc = RunFeatFunc;
+
+exports.RunFeatFunc = util.RunFeatFunc;
+exports.GetSkillFunc = util.GetSkillFunc;

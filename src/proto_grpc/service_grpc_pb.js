@@ -2,7 +2,7 @@
 
 'use strict';
 var grpc = require('grpc');
-var message_pb = require('./message_pb.js');
+var message_pb = require('../proto_js/message_pb.js');
 
 function serialize_ULZProto_SEDiceCalReq(arg) {
   if (!(arg instanceof message_pb.SEDiceCalReq)) {
