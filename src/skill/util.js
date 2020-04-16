@@ -1,7 +1,6 @@
 const _clone = require('lodash/clone');
-const DtStruct = require('../proto_js/Data_pb');
-const MsgStruct = require('../proto_js/message_pb');
-
+const DtStruct = require('../proto_ts/Data_pb');
+const MsgStruct = require('../proto_ts/message_pb');
 /**
  * 
  * @param {string} $cond_string 
@@ -110,9 +109,7 @@ var CardTotalValCalcSet = function (card_list) {
     });
     return ty;
 }
-var skillCalReqConv = function (seSkillCalReq) {
 
-}
 
 /**
  * @function RunFeatFunc
