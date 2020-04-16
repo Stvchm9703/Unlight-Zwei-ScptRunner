@@ -35,3 +35,17 @@ message DiceResultSet {
     repeated int32             value                       = 1;
 }
 // !SECTION: message.proto
+
+message SEEffectCalReq {
+    string                      id                          = 1;
+    EffectTiming                from_time                   = 2;
+    EffectTiming                to_time                     = 3;
+    GameDataSet                 gameset_instant             = 4;
+    string                      from_cli                    = 5;
+}
+
+message SEEffectCalResp{
+    string                      id                          = 1;
+    string                      from_cli                    = 2;
+    GameDataSet                 gameset_result              = 3;   
+}
