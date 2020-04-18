@@ -1,5 +1,5 @@
-var messages = require('./proto_js/message_pb');
-var dataStruct = require('./proto_js/Data_pb');
+var messages = require('../proto_ts/message_pb');
+var dataStruct = require('../proto_ts/Data_pb');
 var _filter = require('lodash/filter');
 
 /**
@@ -19,7 +19,12 @@ var diceCalculate = function (call) {
     return response;
 }
 
-
+/**
+ *
+ *
+ * @param {number} diceFace
+ * @returns
+ */
 function _roll_dice(diceFace) {
     return Math.round(Math.random() * diceFace);
 }

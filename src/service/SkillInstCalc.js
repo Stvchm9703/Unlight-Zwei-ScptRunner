@@ -1,13 +1,15 @@
-var messages = require('./proto_js/message_pb');
-var dataStruct = require('./proto_js/Data_pb');
+var messages = require('../proto_ts/message_pb');
+var dataStruct = require('../proto_ts/Data_pb');
 var _filter = require('lodash/filter');
+var skill_func_index = require('../skill/skill_data.json');
+const skill_util = require('../skill/util');
 
 /**
- * @function _SkillCalculate
+ * @function _SkillInstCalc
  * @param {messages.SESkillCalReq} call
  * @returns {messages.SESkillCalResp} response
  */
-var _SkillCalculate = function (call) {
+var _SkillInstCalc = function (call) {
     let calle = call.toObject();
     var tar_skill = [];
     // call : SESkillCalReq
@@ -15,8 +17,6 @@ var _SkillCalculate = function (call) {
     let totalVal = skill_util.CardTotalValCalcSet(calle.incomeCardList);
     let effectList = [];
     let funcBind = calle.featList;
-    console.log(funcBind);
-    console.log(totalVal);
     funcBind.forEach(element => {
         console.log(element);
         let exist = _filter(skill_func_index, function (o) {
@@ -26,28 +26,24 @@ var _SkillCalculate = function (call) {
 
         if (exist.length != -1) {
             let set = {
-                func: skill.GetSkillFunc(element.featNo),
+                func: skill_util.GetSkillFunc(element.featNo),
                 skill: element,
             }
             tar_skill.push(set);
         }
     });
-    console.log(tar_skill);
     tar_skill.forEach(e => {
         console.log(e);
         let tmp = e.func.apply(null, [totalVal, e.skill.featNo]);
-        console.log(tmp);
         // suppose returns {
         //     totalVal,
         //     effectList,
         // }
 
-        effectList.push([...tmp.effectList]);
+        // effectList.push([...tmp.effectList]);
         totalVal = skill_util.AddTotalVal(totalVal, tmp.totalVal);
     });
 
-    console.log(effectList);
-    console.log(totalVal);
 
     var response = new messages.SESkillCalResp();
 
@@ -61,10 +57,8 @@ var _SkillCalculate = function (call) {
         response.setResultVal(totalVal['move']);
     }
 
-    response.setEffectResultList(effectList);
-
     return response;
 }
 
 
-exports.SkillCalculate = _SkillCalculate;
+exports.SkillInstCalc = _SkillInstCalc;

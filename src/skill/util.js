@@ -1,6 +1,7 @@
 const _clone = require('lodash/clone');
 const DtStruct = require('../proto_ts/Data_pb');
 const MsgStruct = require('../proto_ts/message_pb');
+const {featFuncTable} = require('./index');
 /**
  * 
  * @param {string} $cond_string 
@@ -111,29 +112,7 @@ var CardTotalValCalcSet = function (card_list) {
 }
 
 
-/**
- * @function RunFeatFunc
- * @param {number} $request_feat 
- * @param {number} $pow
- * @param {MsgStruct.SESkillCalReq.incomeCardList} $card_list
- */
-var RunFeatFunc = function ($request_feat, $pow, $card_list) {
-    if (featFuncTable[$request_feat] != null) {
-        return featFuncTable[$request_feat].apply($card_list, $pow);
-    }
-    return null;
-};
 
-/**
- * 
- * @param {number} featNo 
- */
-var GetSkillFunc = function (featNo) {
-    if (featFuncTable[featNo] != null) {
-        return featFuncTable[featNo];
-    }
-    return null;
-}
 
 /**
 * @function AddTotalVal
@@ -161,10 +140,9 @@ var EffectTimingInit = function (eventPhase, hookPhase, subCount) {
     ); // default
     return trig_time;
 }
-exports.skillCalReqConv = skillCalReqConv;
+
 exports.CardCondStrConv = CardCondStrConv;
 exports.CardTotalValCalcSet = CardTotalValCalcSet;
-
 exports.RunFeatFunc = RunFeatFunc;
 exports.GetSkillFunc = GetSkillFunc;
 

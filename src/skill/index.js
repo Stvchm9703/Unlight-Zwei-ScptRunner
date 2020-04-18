@@ -7,7 +7,7 @@
 // -----
 // local skill file import
 const util = require('./util');
-const dataStruct = require('../proto_js/Data_pb');
+// const dataStruct = require('../proto_ts/Data_pb');
 
 const cc01Sk = require('./cc01_skill');
 const cc02Sk = require('./cc02_skill');
@@ -97,6 +97,28 @@ if(featFuncTable[41] == null){
     featFuncTable[41] = cc05Sk.backstab;
 }
 
+/**
+ * @function RunFeatFunc
+ * @param {number} $request_feat 
+ * @param {number} $pow
+ * @param {MsgStruct.SESkillCalReq.incomeCardList} $card_list
+ */
+var RunFeatFunc = function ($request_feat, $pow, $card_list) {
+    if (featFuncTable[$request_feat] != null) {
+        return featFuncTable[$request_feat].apply($card_list, $pow);
+    }
+    return null;
+};
 
-exports.RunFeatFunc = util.RunFeatFunc;
-exports.GetSkillFunc = util.GetSkillFunc;
+/**
+ * 
+ * @param {number} featNo 
+ */
+var GetSkillFunc = function (featNo) {
+    if (featFuncTable[featNo] != null) {
+        return featFuncTable[featNo];
+    }
+    return null;
+}
+exports.RunFeatFunc = RunFeatFunc;
+exports.GetSkillFunc = GetSkillFunc;

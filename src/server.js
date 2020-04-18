@@ -1,8 +1,8 @@
 
 var services = require('./proto_grpc/service_grpc_pb');
 var grpc = require('grpc');
-const sc = require('./SkillCalculate');
-const dc = require('./DiceCalculate');
+const sc = require('./service/SkillCalculate');
+const dc = require('./service/DiceCalculate');
 
 
 function getServer() {

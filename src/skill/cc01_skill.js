@@ -7,8 +7,8 @@
 */
 const util = require('./util');
 const _ = require('lodash');
-const dataStruct = require('../proto_js/Data_pb');
-const eventStruct = require('../proto_js/EventHookPhase_pb');
+const dataStruct = require('../proto_ts/Data_pb');
+const eventStruct = require('../proto_ts/EventHookPhase_pb');
 
 /**
 * Character binded  : cc01
