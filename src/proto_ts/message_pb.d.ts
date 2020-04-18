@@ -152,6 +152,9 @@ export class SEEffectCalReq extends jspb.Message {
   getFromCli(): string;
   setFromCli(value: string): void;
 
+  getCase(): EffectCalcCaseMap[keyof EffectCalcCaseMap];
+  setCase(value: EffectCalcCaseMap[keyof EffectCalcCaseMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SEEffectCalReq.AsObject;
   static toObject(includeInstance: boolean, msg: SEEffectCalReq): SEEffectCalReq.AsObject;
@@ -169,6 +172,7 @@ export namespace SEEffectCalReq {
     toTime?: Data_pb.EffectTiming.AsObject,
     gamesetInstant?: Data_pb.GameDataSet.AsObject,
     fromCli: string,
+    pb_case: EffectCalcCaseMap[keyof EffectCalcCaseMap],
   }
 }
 
@@ -183,6 +187,12 @@ export class SEEffectCalResp extends jspb.Message {
   clearGamesetResult(): void;
   getGamesetResult(): Data_pb.GameDataSet | undefined;
   setGamesetResult(value?: Data_pb.GameDataSet): void;
+
+  getCase(): EffectCalcCaseMap[keyof EffectCalcCaseMap];
+  setCase(value: EffectCalcCaseMap[keyof EffectCalcCaseMap]): void;
+
+  getExtraResult(): string;
+  setExtraResult(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SEEffectCalResp.AsObject;
@@ -199,6 +209,17 @@ export namespace SEEffectCalResp {
     id: string,
     fromCli: string,
     gamesetResult?: Data_pb.GameDataSet.AsObject,
+    pb_case: EffectCalcCaseMap[keyof EffectCalcCaseMap],
+    extraResult: string,
   }
 }
+
+export interface EffectCalcCaseMap {
+  EF_CASE_GENERAL: 0;
+  EF_CASE_MOVE: 1;
+  EF_CASE_ATTACK: 2;
+  EF_CASE_DEFENCE: 3;
+}
+
+export const EffectCalcCase: EffectCalcCaseMap;
 

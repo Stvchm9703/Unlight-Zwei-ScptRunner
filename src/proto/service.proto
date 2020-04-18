@@ -14,7 +14,6 @@ service SkillEffectService {
     rpc SkillCalculate      (SESkillCalReq)             returns (SESkillCalResp);
     rpc EffectCalculate     (SEEffectCalReq)            returns (SEEffectCalResp);
     rpc DiceCalculate       (SEDiceCalReq)              returns (SEDiceCalResp);
-    
 }
 
 // !SECTION: service.proto

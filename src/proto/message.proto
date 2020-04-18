@@ -42,10 +42,20 @@ message SEEffectCalReq {
     EffectTiming                to_time                     = 3;
     GameDataSet                 gameset_instant             = 4;
     string                      from_cli                    = 5;
+    EffectCalcCase              case                        = 6;
 }
 
 message SEEffectCalResp{
     string                      id                          = 1;
     string                      from_cli                    = 2;
     GameDataSet                 gameset_result              = 3;   
+    EffectCalcCase              case                        = 4;
+    string                      extra_result                = 5;
+
+}
+enum EffectCalcCase {
+    EF_CASE_GENERAL = 0;
+    EF_CASE_MOVE    = 1;
+    EF_CASE_ATTACK  = 2;
+    EF_CASE_DEFENCE = 3;
 }
