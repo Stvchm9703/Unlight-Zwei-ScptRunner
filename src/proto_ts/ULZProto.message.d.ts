@@ -1,5 +1,11 @@
 declare namespace ULZProto {
 
+    export enum EffectCalcCase {
+        EF_CASE_GENERAL = "EF_CASE_GENERAL",
+        EF_CASE_MOVE = "EF_CASE_MOVE",
+        EF_CASE_ATTACK = "EF_CASE_ATTACK",
+        EF_CASE_DEFENCE = "EF_CASE_DEFENCE",
+    }
     // ANCHOR: message-struct for game-service
     // SECTION: message.proto
     // -------------------------------------------------------------
@@ -33,12 +39,15 @@ declare namespace ULZProto {
         to_time?: EffectTiming;
         gameset_instant?: GameDataSet;
         from_cli?: string;
+        case?: EffectCalcCase;
     }
 
     export interface SEEffectCalResp {
         id?: string;
         from_cli?: string;
         gameset_result?: GameDataSet;
+        case?: EffectCalcCase;
+        extra_result?: string;
     }
 
 }
