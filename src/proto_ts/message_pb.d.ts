@@ -18,6 +18,9 @@ export class SESkillCalReq extends jspb.Message {
   getFromCli(): string;
   setFromCli(value: string): void;
 
+  getTargType(): Data_pb.EventCardTypeMap[keyof Data_pb.EventCardTypeMap];
+  setTargType(value: Data_pb.EventCardTypeMap[keyof Data_pb.EventCardTypeMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SESkillCalReq.AsObject;
   static toObject(includeInstance: boolean, msg: SESkillCalReq): SESkillCalReq.AsObject;
@@ -33,6 +36,7 @@ export namespace SESkillCalReq {
     incomeCardList: Array<Data_pb.EventCard.AsObject>,
     featList: Array<Data_pb.SkillSet.AsObject>,
     fromCli: string,
+    targType: Data_pb.EventCardTypeMap[keyof Data_pb.EventCardTypeMap],
   }
 }
 
@@ -44,6 +48,9 @@ export class SESkillCalResp extends jspb.Message {
   getEffectResultList(): Array<Data_pb.EffectResult>;
   setEffectResultList(value: Array<Data_pb.EffectResult>): void;
   addEffectResult(value?: Data_pb.EffectResult, index?: number): Data_pb.EffectResult;
+
+  getTargType(): Data_pb.EventCardTypeMap[keyof Data_pb.EventCardTypeMap];
+  setTargType(value: Data_pb.EventCardTypeMap[keyof Data_pb.EventCardTypeMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SESkillCalResp.AsObject;
@@ -59,6 +66,7 @@ export namespace SESkillCalResp {
   export type AsObject = {
     resultVal: number,
     effectResultList: Array<Data_pb.EffectResult.AsObject>,
+    targType: Data_pb.EventCardTypeMap[keyof Data_pb.EventCardTypeMap],
   }
 }
 
@@ -152,9 +160,6 @@ export class SEEffectCalReq extends jspb.Message {
   getFromCli(): string;
   setFromCli(value: string): void;
 
-  getCase(): EffectCalcCaseMap[keyof EffectCalcCaseMap];
-  setCase(value: EffectCalcCaseMap[keyof EffectCalcCaseMap]): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SEEffectCalReq.AsObject;
   static toObject(includeInstance: boolean, msg: SEEffectCalReq): SEEffectCalReq.AsObject;
@@ -172,7 +177,6 @@ export namespace SEEffectCalReq {
     toTime?: Data_pb.EffectTiming.AsObject,
     gamesetInstant?: Data_pb.GameDataSet.AsObject,
     fromCli: string,
-    pb_case: EffectCalcCaseMap[keyof EffectCalcCaseMap],
   }
 }
 
@@ -188,11 +192,20 @@ export class SEEffectCalResp extends jspb.Message {
   getGamesetResult(): Data_pb.GameDataSet | undefined;
   setGamesetResult(value?: Data_pb.GameDataSet): void;
 
-  getCase(): EffectCalcCaseMap[keyof EffectCalcCaseMap];
-  setCase(value: EffectCalcCaseMap[keyof EffectCalcCaseMap]): void;
+  clearResultInfoList(): void;
+  getResultInfoList(): Array<string>;
+  setResultInfoList(value: Array<string>): void;
+  addResultInfo(value: string, index?: number): string;
 
-  getExtraResult(): string;
-  setExtraResult(value: string): void;
+  hasFromTime(): boolean;
+  clearFromTime(): void;
+  getFromTime(): Data_pb.EffectTiming | undefined;
+  setFromTime(value?: Data_pb.EffectTiming): void;
+
+  hasToTime(): boolean;
+  clearToTime(): void;
+  getToTime(): Data_pb.EffectTiming | undefined;
+  setToTime(value?: Data_pb.EffectTiming): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SEEffectCalResp.AsObject;
@@ -209,17 +222,9 @@ export namespace SEEffectCalResp {
     id: string,
     fromCli: string,
     gamesetResult?: Data_pb.GameDataSet.AsObject,
-    pb_case: EffectCalcCaseMap[keyof EffectCalcCaseMap],
-    extraResult: string,
+    resultInfoList: Array<string>,
+    fromTime?: Data_pb.EffectTiming.AsObject,
+    toTime?: Data_pb.EffectTiming.AsObject,
   }
 }
-
-export interface EffectCalcCaseMap {
-  EF_CASE_GENERAL: 0;
-  EF_CASE_MOVE: 1;
-  EF_CASE_ATTACK: 2;
-  EF_CASE_DEFENCE: 3;
-}
-
-export const EffectCalcCase: EffectCalcCaseMap;
 

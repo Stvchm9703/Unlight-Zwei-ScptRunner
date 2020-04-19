@@ -15,11 +15,13 @@ message SESkillCalReq {
     repeated EventCard          income_card                 = 1;
     repeated SkillSet           feat                        = 2;
     string                      from_cli                    = 3;
+    EventCardType               targ_type                   = 4;
 }
 
 message SESkillCalResp {
     int32                       result_val                  = 1;
     repeated EffectResult       effect_result               = 2;
+    EventCardType               targ_type                   = 3;
 }
 
 message SEDiceCalReq    {
@@ -34,7 +36,6 @@ message SEDiceCalResp   {
 message DiceResultSet {
     repeated int32             value                       = 1;
 }
-// !SECTION: message.proto
 
 message SEEffectCalReq {
     string                      id                          = 1;
@@ -42,20 +43,16 @@ message SEEffectCalReq {
     EffectTiming                to_time                     = 3;
     GameDataSet                 gameset_instant             = 4;
     string                      from_cli                    = 5;
-    EffectCalcCase              case                        = 6;
+    //EffectCalcCase              case                        = 6;
 }
 
 message SEEffectCalResp{
     string                      id                          = 1;
     string                      from_cli                    = 2;
     GameDataSet                 gameset_result              = 3;   
-    EffectCalcCase              case                        = 4;
-    string                      extra_result                = 5;
+    repeated string             result_info                 = 4;
+    EffectTiming                from_time                   = 5;
+    EffectTiming                to_time                     = 6;
+}
 
-}
-enum EffectCalcCase {
-    EF_CASE_GENERAL = 0;
-    EF_CASE_MOVE    = 1;
-    EF_CASE_ATTACK  = 2;
-    EF_CASE_DEFENCE = 3;
-}
+// !SECTION: message.proto

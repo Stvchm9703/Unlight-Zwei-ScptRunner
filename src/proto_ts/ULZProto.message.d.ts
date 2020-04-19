@@ -1,11 +1,5 @@
 declare namespace ULZProto {
 
-    export enum EffectCalcCase {
-        EF_CASE_GENERAL = "EF_CASE_GENERAL",
-        EF_CASE_MOVE = "EF_CASE_MOVE",
-        EF_CASE_ATTACK = "EF_CASE_ATTACK",
-        EF_CASE_DEFENCE = "EF_CASE_DEFENCE",
-    }
     // ANCHOR: message-struct for game-service
     // SECTION: message.proto
     // -------------------------------------------------------------
@@ -13,11 +7,13 @@ declare namespace ULZProto {
         income_card?: Array<EventCard>;
         feat?: Array<SkillSet>;
         from_cli?: string;
+        targ_type?: EventCardType;
     }
 
     export interface SESkillCalResp {
         result_val?: number;
         effect_result?: Array<EffectResult>;
+        targ_type?: EventCardType;
     }
 
     export interface SEDiceCalReq {
@@ -38,16 +34,16 @@ declare namespace ULZProto {
         from_time?: EffectTiming;
         to_time?: EffectTiming;
         gameset_instant?: GameDataSet;
-        from_cli?: string;
-        case?: EffectCalcCase;
+        from_cli?: string; // EffectCalcCase              case                        = 6;
     }
 
     export interface SEEffectCalResp {
         id?: string;
         from_cli?: string;
         gameset_result?: GameDataSet;
-        case?: EffectCalcCase;
-        extra_result?: string;
+        result_info?: Array<string>;
+        from_time?: EffectTiming;
+        to_time?: EffectTiming;
     }
 
 }

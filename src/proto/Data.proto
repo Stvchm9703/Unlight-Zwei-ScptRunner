@@ -173,8 +173,6 @@ message StatusSet {
 //  EffectResult & EffectCounter
 //      same as 2D-table status[][]
 
-
-
 message EffectResult {
     // targer 
     int32                       tar_card                = 1;
