@@ -160,6 +160,9 @@ export class SEEffectCalReq extends jspb.Message {
   getFromCli(): string;
   setFromCli(value: string): void;
 
+  getRemark(): string;
+  setRemark(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SEEffectCalReq.AsObject;
   static toObject(includeInstance: boolean, msg: SEEffectCalReq): SEEffectCalReq.AsObject;
@@ -177,6 +180,7 @@ export namespace SEEffectCalReq {
     toTime?: Data_pb.EffectTiming.AsObject,
     gamesetInstant?: Data_pb.GameDataSet.AsObject,
     fromCli: string,
+    remark: string,
   }
 }
 

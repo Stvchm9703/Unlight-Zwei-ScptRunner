@@ -1061,7 +1061,8 @@ proto.ULZProto.SEEffectCalReq.toObject = function(includeInstance, msg) {
     fromTime: (f = msg.getFromTime()) && Data_pb.EffectTiming.toObject(includeInstance, f),
     toTime: (f = msg.getToTime()) && Data_pb.EffectTiming.toObject(includeInstance, f),
     gamesetInstant: (f = msg.getGamesetInstant()) && Data_pb.GameDataSet.toObject(includeInstance, f),
-    fromCli: jspb.Message.getFieldWithDefault(msg, 5, "")
+    fromCli: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    remark: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1120,6 +1121,10 @@ proto.ULZProto.SEEffectCalReq.deserializeBinaryFromReader = function(msg, reader
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setFromCli(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRemark(value);
       break;
     default:
       reader.skipField();
@@ -1185,6 +1190,13 @@ proto.ULZProto.SEEffectCalReq.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getRemark();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1308,6 +1320,21 @@ proto.ULZProto.SEEffectCalReq.prototype.getFromCli = function() {
 /** @param {string} value */
 proto.ULZProto.SEEffectCalReq.prototype.setFromCli = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string remark = 6;
+ * @return {string}
+ */
+proto.ULZProto.SEEffectCalReq.prototype.getRemark = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.ULZProto.SEEffectCalReq.prototype.setRemark = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

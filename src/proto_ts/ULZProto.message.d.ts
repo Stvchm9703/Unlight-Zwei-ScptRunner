@@ -34,7 +34,8 @@ declare namespace ULZProto {
         from_time?: EffectTiming;
         to_time?: EffectTiming;
         gameset_instant?: GameDataSet;
-        from_cli?: string; // EffectCalcCase              case                        = 6;
+        from_cli?: string;
+        remark?: string;
     }
 
     export interface SEEffectCalResp {
