@@ -522,12 +522,19 @@ proto.ULZProto.SESkillCalResp.prototype.setTargType = function(value) {
  * @constructor
  */
 proto.ULZProto.SEDiceCalReq = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ULZProto.SEDiceCalReq.repeatedFields_, null);
 };
 goog.inherits(proto.ULZProto.SEDiceCalReq, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.ULZProto.SEDiceCalReq.displayName = 'proto.ULZProto.SEDiceCalReq';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ULZProto.SEDiceCalReq.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -558,7 +565,9 @@ proto.ULZProto.SEDiceCalReq.prototype.toObject = function(opt_includeInstance) {
 proto.ULZProto.SEDiceCalReq.toObject = function(includeInstance, msg) {
   var f, obj = {
     incomeDice: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    act: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    act: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    effectResultList: jspb.Message.toObjectList(msg.getEffectResultList(),
+    Data_pb.EffectResult.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -603,6 +612,11 @@ proto.ULZProto.SEDiceCalReq.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAct(value);
       break;
+    case 3:
+      var value = new Data_pb.EffectResult;
+      reader.readMessage(value,Data_pb.EffectResult.deserializeBinaryFromReader);
+      msg.addEffectResult(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -646,6 +660,14 @@ proto.ULZProto.SEDiceCalReq.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = message.getEffectResultList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      Data_pb.EffectResult.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -676,6 +698,37 @@ proto.ULZProto.SEDiceCalReq.prototype.getAct = function() {
 /** @param {number} value */
 proto.ULZProto.SEDiceCalReq.prototype.setAct = function(value) {
   jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * repeated EffectResult effect_result = 3;
+ * @return {!Array<!proto.ULZProto.EffectResult>}
+ */
+proto.ULZProto.SEDiceCalReq.prototype.getEffectResultList = function() {
+  return /** @type{!Array<!proto.ULZProto.EffectResult>} */ (
+    jspb.Message.getRepeatedWrapperField(this, Data_pb.EffectResult, 3));
+};
+
+
+/** @param {!Array<!proto.ULZProto.EffectResult>} value */
+proto.ULZProto.SEDiceCalReq.prototype.setEffectResultList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.ULZProto.EffectResult=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ULZProto.EffectResult}
+ */
+proto.ULZProto.SEDiceCalReq.prototype.addEffectResult = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ULZProto.EffectResult, opt_index);
+};
+
+
+proto.ULZProto.SEDiceCalReq.prototype.clearEffectResultList = function() {
+  this.setEffectResultList([]);
 };
 
 

@@ -77,6 +77,11 @@ export class SEDiceCalReq extends jspb.Message {
   getAct(): number;
   setAct(value: number): void;
 
+  clearEffectResultList(): void;
+  getEffectResultList(): Array<Data_pb.EffectResult>;
+  setEffectResultList(value: Array<Data_pb.EffectResult>): void;
+  addEffectResult(value?: Data_pb.EffectResult, index?: number): Data_pb.EffectResult;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SEDiceCalReq.AsObject;
   static toObject(includeInstance: boolean, msg: SEDiceCalReq): SEDiceCalReq.AsObject;
@@ -91,6 +96,7 @@ export namespace SEDiceCalReq {
   export type AsObject = {
     incomeDice: number,
     act: number,
+    effectResultList: Array<Data_pb.EffectResult.AsObject>,
   }
 }
 

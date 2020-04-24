@@ -30,14 +30,8 @@
     "mocha": "^7.1.1"
   },
   "imports": {
-    "@Gm/": [
-      "./src/"
-    ],
-    "@npm": [
-      "./node_module/."
-    ],
-    "@std/": [
-      "https://deno.land/std/"
-    ]
+    "@Gm/": [ "./src/" ],
+    "@npm": [ "./node_module/." ],
+    "@std/": [ "https://deno.land/std/" ]
   }
 }

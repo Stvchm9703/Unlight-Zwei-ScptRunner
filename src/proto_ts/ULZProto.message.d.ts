@@ -19,6 +19,7 @@ declare namespace ULZProto {
     export interface SEDiceCalReq {
         income_dice?: number;
         act?: number;
+        effect_result?: Array<EffectResult>;
     }
 
     export interface SEDiceCalResp {
