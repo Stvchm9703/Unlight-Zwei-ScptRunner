@@ -143,8 +143,8 @@ var EffectTimingInit = function (eventPhase, hookPhase, subCount) {
 
 exports.CardCondStrConv = CardCondStrConv;
 exports.CardTotalValCalcSet = CardTotalValCalcSet;
-exports.RunFeatFunc = RunFeatFunc;
-exports.GetSkillFunc = GetSkillFunc;
+// exports.RunFeatFunc = RunFeatFunc;
+// exports.GetSkillFunc = GetSkillFunc;
 
 exports.AddTotalVal = AddTotalVal;
 

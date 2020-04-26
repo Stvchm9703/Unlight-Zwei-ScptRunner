@@ -3,7 +3,7 @@ const main_server = require('./src/server');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const grpc = require('grpc');
-
+const {program} = require('commander');
 // import * as main_server from './src/server';
 
 // import * as yaml from 'js-yaml';
@@ -12,11 +12,15 @@ const grpc = require('grpc');
 
 if (require.main === module) {
     // If this is run as a script, start a server on an unused port
+    program
+        .option('-c, --configFile <file>' , 'configuration file for running server' , './config.yaml')
+        .parse(process.argv);
+
     var server = main_server.getServer();
     var doc = yaml.safeLoad(
-        fs.readFileSync('./config.yaml', 'utf8')
+        fs.readFileSync(program.configFile, 'utf8')
     );
-    console.log(doc);
+    console.log('doc\n',doc);
     server.bind(
         `${doc['api_server']['ip']}:${doc['api_server']['port']}`,
         grpc.ServerCredentials.createInsecure()

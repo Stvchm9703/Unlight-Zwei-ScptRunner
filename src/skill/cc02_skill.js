@@ -5,11 +5,11 @@
 * generate at : April 15th 2020, 8:54:20 am
 * !please manually modify the skill function
 */
-// const util = require('./util');
+const util = require('./util');
 const _ = require('lodash');
 const dataStruct = require('../proto_js/Data_pb');
 
-import util from './util';
+// import util from './util';
 
 /**
 * Character binded  : cc02

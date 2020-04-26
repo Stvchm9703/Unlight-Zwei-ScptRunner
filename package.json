@@ -6,6 +6,7 @@
     "@grpc/proto-loader": "^0.1.0",
     "@types/node": "^13.11.1",
     "async": "^1.5.2",
+    "commander": "^5.1.0",
     "google-protobuf": "^3.0.0",
     "grpc": "^1.12.0",
     "grpc-tools": "^1.8.1",
@@ -18,20 +19,27 @@
   "scripts": {
     "dev": "node main.js",
     "start": "node main.js",
+    "start-server" : "node main.js -c config.test_server.yaml",
     "clean": "rm -rf ./src/proto_grpc/*.proto ./src/proto_js/*.proto",
     "gen": "grpc_tools_node_protoc  -I=./src/proto/ --js_out=import_style=commonjs,binary:./src/proto_js/ --grpc_out=./src/proto_grpc/ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` ./src/proto/*.proto",
     "test-cli": "node ",
     "test": "npx mocha",
     "genTs": "grpc_tools_node_protoc -I=./src/proto/ --plugin=protoc-gen-ts='./node_modules/.bin/protoc-gen-ts' --tstypes_out=./src/proto_ts/  --js_out=import_style=commonjs,binary:./src/proto_ts/ --ts_out=./src/proto_ts/ --grpc_out=./src/proto_ts/ ./src/proto/*.proto",
     "genTsa": "grpc_tools_node_protoc -I=./src/proto/ --plugin=protoc-gen-ts='./node_modules/.bin/protoc-gen-ts_proto' --ts_proto_out=./src/proto_ts/ --grpc_out=./src/proto_grpc_ts/ ./src/proto/*.proto",
-    "genTsb" : "protoc -I=./src/proto/ --tstypes_out=./src/proto_tsc/ ./src/proto/*.proto"
+    "genTsb": "protoc -I=./src/proto/ --tstypes_out=./src/proto_tsc/ ./src/proto/*.proto"
   },
   "devDependencies": {
     "mocha": "^7.1.1"
   },
   "imports": {
-    "@Gm/": [ "./src/" ],
-    "@npm": [ "./node_module/." ],
-    "@std/": [ "https://deno.land/std/" ]
+    "@Gm/": [
+      "./src/"
+    ],
+    "@npm": [
+      "./node_module/."
+    ],
+    "@std/": [
+      "https://deno.land/std/"
+    ]
   }
 }
