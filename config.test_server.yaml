@@ -1,0 +1,8 @@
+api_server:
+  conn_type: grpc
+  ip: 192.168.0.110
+  port: 13000
+  max_pool_size: 20
+  api_refer_type: proto
+  api_table_filepath: "'./proto/','./'"
+  api_outpath: "api/"
