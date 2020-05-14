@@ -11,11 +11,11 @@ const skill_util = require('../skill/util');
  */
 var _SkillCalculate = function (call) {
     let calle = call.toObject();
-    var tar_skill = [];
+    var tar_skill = new Array();
     // call : SESkillCalReq
     let initVal = skill_util.CardTotalValCalcSet(calle.incomeCardList);
     let totalVal = skill_util.CardTotalValCalcSet(calle.incomeCardList);
-    let effectList = [];
+    let effectList = new Array();
     let funcBind = calle.featList;
     console.log(funcBind);
     console.log(totalVal);
